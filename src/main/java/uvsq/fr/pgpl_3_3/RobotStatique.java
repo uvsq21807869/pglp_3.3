@@ -20,6 +20,10 @@ public class RobotStatique {
 	public void setDirection(Direction direction) {
 		this.direction = direction;
 	}
+	public void avance() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }

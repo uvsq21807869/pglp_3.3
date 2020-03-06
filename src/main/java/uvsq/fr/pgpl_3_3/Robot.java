@@ -1,23 +1,42 @@
 package uvsq.fr.pgpl_3_3;
+import uvsq.fr.*;
+public class Robot extends RobotStatique {
 
-public class Robot {
-	public int position;
-	public Direction direction;
+	public Robot(Position position, Direction direction) {
+		super(position, direction);
+		// TODO Auto-generated constructor stub
+	}
+	public void tourne() {
+		if(direction.equals(Direction.NORD)) {
+			this.direction=Direction.EST;
+		}
+		else if(direction.equals(Direction.EST)) {
+			this.direction=Direction.SUD;
+		}
+		else if(direction.equals(Direction.SUD)) {
+			this.direction=Direction.OUEST;
+		}
+		else {
+			this.direction=Direction.NORD;
+		}
+	}
 	
-	public Robot(int position) {
-		super();
-		this.position = position;
+	@Override
+	public void avance(){
+		if(direction.equals(Direction.NORD)) {
+			this.position.deplaceY(1);
+		}
+		else if(direction.equals(Direction.EST)) {
+			this.position.deplaceX(1);
+		}
+		else if(direction.equals(Direction.SUD)) {
+			this.position.deplaceY(-1);
+		}
+		else {
+			this.position.deplaceX(-1);
+		}
 	}
-	public int getPosition() {
-		return position;
-	}
-	public void setPosition(int position) {
-		this.position = position;
-	}
-	public Robot(int position) {
-		super();
-		this.position = position;
-	}
+
 	
 	
 	
